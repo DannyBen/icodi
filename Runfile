@@ -1,0 +1,78 @@
+require "runfile-tasks"
+require "byebug"
+require_relative 'lib/icodi'
+
+title   "Icodi Developer Toolbelt"
+summary "Runfile tasks for building the Icodi gem"
+
+RunfileTasks::RubyGems.all 'icodi'
+RunfileTasks::Testing.rspec
+
+help   "Run interactive console"
+action :console, :c do
+  run "bundle exec bin/console"
+end
+
+help   "Generate changelog"
+action :changelog do
+  run 'github_changelog_generator --cache-file tmp/changlog-cache'  
+  run "git commit -am 'update changelog' && git push"
+end
+
+usage  "make [TEXT]"
+action :make do |args|
+  text = args['TEXT']
+
+  options = { } # pixels: 6, mirror: :y }
+
+  icodi = Icodi.new text, options
+  icodi.save 'dev/icodi'
+end
+
+action :watch do
+  run! "filewatcher {Runfile,*.rb} 'run make'"
+end
+
+action :logo do
+  svg = Victor::SVG.new viewBox: "0 0 130 30"
+
+  pixels = %w[- 0,0 0,1 0,2 - 2,0 2,1 2,2 3,0 3,2 - 5,0 5,1 5,2 6,0 6,2 7,0 7,1 7,2 - 9,0 9,2 10,0 10,1 10,2 - 12,0 12,1 12,2]
+  color, style = nil, nil
+
+  svg.build do
+    pixels.each do |pixel|
+      if pixel == '-'
+        color = "#%06x" % (rand * 0xffffff) 
+        style = { stroke: color, stroke_width: 0.1 }
+        next
+      end
+      x, y = pixel.split(',').map(&:to_i)
+
+      svg.rect x: x*10, y: y*10, width: 10, height: 10, fill: color, style: style
+    end
+  end
+
+  svg.save 'logo'
+end
+
+action :strip do
+  count = 4
+  pixels = 5
+
+  svg = Victor::SVG.new viewBox: "0 0 #{count*(pixels+1)*10-10} #{pixels*10}"
+
+  svg.build do
+    count.times do |i|
+      mirror = [:x, :y, :both, :none].sample
+      options = { mirror: mirror, pixels: pixels }
+      g(transform: "translate(#{i*(pixels+1)*10} 0)")  { append Icodi.new options }
+    end
+  end
+
+  svg.save 'test'
+end
+
+action :debug do
+  puts Icodi.new("dannyb").render
+  Icodi.new("dannyb").save 'dannyb'
+end
