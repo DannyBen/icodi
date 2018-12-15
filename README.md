@@ -79,7 +79,7 @@ icon.save 'icon'
 
 Generate persistent random icon (same input generates the same output):
 
-```
+```ruby
 icon = Icodi.new "any string"
 icon.save 'icon'
 ```
