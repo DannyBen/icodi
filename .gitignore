@@ -8,3 +8,4 @@
 /.yardoc
 /toc.txt
 *.gem
+/test.svg
