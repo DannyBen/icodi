@@ -1,4 +1,4 @@
-Icodi - Deterministic Random SVG Icons
+Icodi - Deterministic Random SVG Icon Generator
 ==================================================
 
 [![Gem Version](https://badge.fury.io/rb/icodi.svg)](https://badge.fury.io/rb/icodi)
