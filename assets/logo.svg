@@ -1,0 +1,34 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg viewBox="0 0 130 30" width="100%" height="100%" 
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+<rect x="0" y="0" width="10" height="10" fill="#c95f28" style="stroke:#c95f28; stroke-width:0.1"/>
+<rect x="0" y="10" width="10" height="10" fill="#c95f28" style="stroke:#c95f28; stroke-width:0.1"/>
+<rect x="0" y="20" width="10" height="10" fill="#c95f28" style="stroke:#c95f28; stroke-width:0.1"/>
+<rect x="20" y="0" width="10" height="10" fill="#7e0877" style="stroke:#7e0877; stroke-width:0.1"/>
+<rect x="20" y="10" width="10" height="10" fill="#7e0877" style="stroke:#7e0877; stroke-width:0.1"/>
+<rect x="20" y="20" width="10" height="10" fill="#7e0877" style="stroke:#7e0877; stroke-width:0.1"/>
+<rect x="30" y="0" width="10" height="10" fill="#7e0877" style="stroke:#7e0877; stroke-width:0.1"/>
+<rect x="30" y="20" width="10" height="10" fill="#7e0877" style="stroke:#7e0877; stroke-width:0.1"/>
+<rect x="50" y="0" width="10" height="10" fill="#64d785" style="stroke:#64d785; stroke-width:0.1"/>
+<rect x="50" y="10" width="10" height="10" fill="#64d785" style="stroke:#64d785; stroke-width:0.1"/>
+<rect x="50" y="20" width="10" height="10" fill="#64d785" style="stroke:#64d785; stroke-width:0.1"/>
+<rect x="60" y="0" width="10" height="10" fill="#64d785" style="stroke:#64d785; stroke-width:0.1"/>
+<rect x="60" y="20" width="10" height="10" fill="#64d785" style="stroke:#64d785; stroke-width:0.1"/>
+<rect x="70" y="0" width="10" height="10" fill="#64d785" style="stroke:#64d785; stroke-width:0.1"/>
+<rect x="70" y="10" width="10" height="10" fill="#64d785" style="stroke:#64d785; stroke-width:0.1"/>
+<rect x="70" y="20" width="10" height="10" fill="#64d785" style="stroke:#64d785; stroke-width:0.1"/>
+<rect x="90" y="0" width="10" height="10" fill="#216221" style="stroke:#216221; stroke-width:0.1"/>
+<rect x="90" y="20" width="10" height="10" fill="#216221" style="stroke:#216221; stroke-width:0.1"/>
+<rect x="100" y="0" width="10" height="10" fill="#216221" style="stroke:#216221; stroke-width:0.1"/>
+<rect x="100" y="10" width="10" height="10" fill="#216221" style="stroke:#216221; stroke-width:0.1"/>
+<rect x="100" y="20" width="10" height="10" fill="#216221" style="stroke:#216221; stroke-width:0.1"/>
+<rect x="120" y="0" width="10" height="10" fill="#434a9b" style="stroke:#434a9b; stroke-width:0.1"/>
+<rect x="120" y="10" width="10" height="10" fill="#434a9b" style="stroke:#434a9b; stroke-width:0.1"/>
+<rect x="120" y="20" width="10" height="10" fill="#434a9b" style="stroke:#434a9b; stroke-width:0.1"/>
+
+</svg>

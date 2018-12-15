@@ -1,3 +1,5 @@
+![logo](assets/logo.svg)
+
 Icodi - Deterministic Random SVG Icon Generator
 ==================================================
 
