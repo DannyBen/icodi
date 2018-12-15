@@ -39,16 +39,55 @@ Examples
 
 ![sample](assets/sample-strip-8xyhigh.svg)
 
-### Stroke: 0.1 - 5.0
+### Increasing Stroke: 0.1 - 5.0
 
 ![sample](assets/sample-strip-stroke.svg)
+
+### Increasing Density: 0.3 - 0.8
+
+![sample](assets/sample-strip-density.svg)
+
+### Mirror Styles: X, Y, Both, None
+
+![sample](assets/sample-strip-mirrors.svg)
 
 
 Usage
 --------------------------------------------------
 
-TODO
+This is the general usage pattern:
 
+```ruby
+require 'icodi'
+
+# initialize with optional text and options
+icon = Icodi.new text, options
+
+# get the SVG string
+icon.render
+
+# or save to SVG file
+icon.save 'logo'
+```
+
+Generate a random icon with the default options, and save it to `icon.svg`:
+
+```ruby
+icon = Icodi.new
+icon.save 'icon'
+```
+
+Generate persistent random icon (same input generates the same output):
+
+```
+icon = Icodi.new "any string"
+icon.save 'icon'
+```
+
+Options
+--------------------------------------------------
+
+Soon
 
 ---
 

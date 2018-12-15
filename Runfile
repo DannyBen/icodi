@@ -56,15 +56,17 @@ action :logo do
 end
 
 action :strip do
-  count = 5
-  pixels = 5
+  count = 4
+  pixels = 6
 
   svg = Victor::SVG.new viewBox: "0 0 #{count*(pixels+1)*10-10} #{pixels*10}"
 
+  mirrors = [:x, :y, :both, :none]
+
   svg.build do
     count.times do |i|
-      options = { pixels: pixels, stroke: 0.1 + i*1 }
-      g(transform: "translate(#{i*(pixels+1)*10} 0)")  { append Icodi.new "asd", options }
+      options = { pixels: pixels, mirror: mirrors[i] }
+      g(transform: "translate(#{i*(pixels+1)*10} 0)")  { append Icodi.new "shlomo", options }
     end
   end
 
