@@ -76,34 +76,26 @@ private
     x = mirror_x ? half : pixels
     y = mirror_y ? half : pixels
 
-    draw matrix x, y
+    draw x, y
   end  
 
-  def draw(grid)
-    grid.each_with_index do |row, y|
-      row.each_with_index do |enabled, x|
-        next unless enabled
-        add_pixel x, y
-        add_pixel pixels-1-x, y if mirror_x and x != pixels/2
-        add_pixel x, pixels-1-y if mirror_y and y != pixels/2
-        add_pixel pixels-1-x, pixels-1-y if mirror_both and x != pixels/2 and y != pixels/2
+  def draw(x_times, y_times)
+    y_times.times do |y|
+      x_times.times do |x|
+        add_pixels x, y if random.rand < density
       end
     end
   end  
 
-  def matrix(xtimes, ytimes)
-    matrix = []
-    ytimes.times do |y|
-      matrix[y] = []
-      xtimes.times do |x|
-        matrix[y][x] = random.rand < density
-      end
-    end
-
-    matrix
+  def add_pixels(x, y)
+    draw_pixel x, y
+    draw_pixel pixels-1-x, y if mirror_x and x != pixels/2
+    draw_pixel x, pixels-1-y if mirror_y and y != pixels/2
+    draw_pixel pixels-1-x, pixels-1-y if mirror_both and x != pixels/2 and y != pixels/2
   end
 
-  def add_pixel(x, y)
+  def draw_pixel(x, y)
     element :rect, x: x*10, y: y*10, width: 10, height: 10, fill: color, style: style
   end
+
 end
