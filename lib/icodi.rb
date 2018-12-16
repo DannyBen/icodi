@@ -82,12 +82,11 @@ private
   def draw(grid)
     grid.each_with_index do |row, y|
       row.each_with_index do |enabled, x|
-        if enabled
-          add_pixel x, y
-          add_pixel pixels-1-x, y if mirror_x and x != pixels/2
-          add_pixel x, pixels-1-y if mirror_y and y != pixels/2
-          add_pixel pixels-1-x, pixels-1-y if mirror_both and x != pixels/2 and y != pixels/2
-        end
+        next unless enabled
+        add_pixel x, y
+        add_pixel pixels-1-x, y if mirror_x and x != pixels/2
+        add_pixel x, pixels-1-y if mirror_y and y != pixels/2
+        add_pixel pixels-1-x, pixels-1-y if mirror_both and x != pixels/2 and y != pixels/2
       end
     end
   end  

@@ -87,8 +87,24 @@ icon.save 'icon'
 Options
 --------------------------------------------------
 
-Soon
+AN options hash can be provided as the first or second argument:
+
+```ruby
+Icodi.new "any string", pixels: 8, density: 0.3
+Icodi.new pixels: 8, density: 0.3, stroke: 2
+```
+
+Parameter   | Default  | Type    | Description
+------------|----------|---------|---------------------
+`pixels`    | 5        | Integer | Grid size.
+`mirror`    | `:x`     | Symbol  | Mirroring mode: `:x`, `:y`, `:both` or `:none`.
+`color`     | Deterministic Random  | String | A color string for the pixels.
+`density`   | 0.5      | Float   | A value between 0 and 1 representing the chance for a pixel to be drawn. Lower values mean less pixels.
+`stroke`    | 0.1      | Float   | Width of the border around each pixel. Note that each pixel is a 10x10 box, so a stroke of 1 means it will take 10% of the box. Higher values generate more overlap between the pixels.
+`background`| `#fff`   | String  | A named SVG color string (`blue`, `yellow` etc.) or RGB color (for example `#dddddd`).
+`template`  | :default | Symbol/String | SVG template to use. Can be `:default`, `:html` or a path to a file. Read more on [Victor SVG Templates].
 
 ---
 
 [GitHub identicons]: https://blog.github.com/2013-08-14-identicons/
+[Victor SVG Templates]: https://github.com/DannyBen/victor#svg-templates
