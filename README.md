@@ -87,7 +87,7 @@ icon.save 'icon'
 Options
 --------------------------------------------------
 
-AN options hash can be provided as the first or second argument:
+Options can be provided as the first or second argument:
 
 ```ruby
 Icodi.new "any string", pixels: 8, density: 0.3
