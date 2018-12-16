@@ -8,6 +8,8 @@ class Icodi < Victor::SVGBase
     text, options = nil, text if text.is_a? Hash
     @text, @options = text, options
     super template: template, viewBox: "0 0 #{size} #{size}"
+
+    first_random_hit
     generate
   end
 
@@ -69,8 +71,11 @@ private
     mirror == :both
   end
 
+  def first_random_hit
+    options[:color] ? random.rand : color
+  end
+
   def generate
-    color # always randomize color first
     element :rect, x: 0, y: 0, width: size, height: size, fill: background
     half = (pixels / 2.0).round
     x = mirror_x ? half : pixels
