@@ -65,15 +65,12 @@ action :strip do
 
   svg.build do
     count.times do |i|
-      options = { pixels: pixels, mirror: mirrors[i] }
-      g(transform: "translate(#{i*(pixels+1)*10} 0)")  { append Icodi.new "shlomo", options }
+      options = { pixels: pixels, mirror: mirrors[i], stroke: 2 }
+      g(transform: "translate(#{i*(pixels+1)*10} 0)")  { append Icodi.new options }
     end
   end
 
   svg.save 'test'
 end
 
-action :debug do
-  puts Icodi.new("dannyb").render
-  Icodi.new("dannyb").save 'dannyb'
-end
+require_relative 'debug' if File.exist? 'debug.rb'
