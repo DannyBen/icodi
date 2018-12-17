@@ -6,8 +6,8 @@ class Icodi < Victor::SVGBase
 
   def initialize(text = nil, options = {})
     text, options = nil, text if text.is_a? Hash
-    @text, @options = text, options
-    super template: template, viewBox: "0 0 #{size} #{size}"
+    @text, @options = text, options.dup
+    super template: template, viewBox: "0 0 #{size} #{size}", clip_path: "url(#rect)"
 
     first_random_hit
     generate
@@ -77,11 +77,19 @@ private
 
   def generate
     element :rect, x: 0, y: 0, width: size, height: size, fill: background
+    element :defs do
+      element :clipPath, id: :clipper do
+        element :rect, width: size, height: size
+      end
+    end
+
     half = (pixels / 2.0).round
     x = mirror_x ? half : pixels
     y = mirror_y ? half : pixels
 
-    draw x, y
+    element :g, clip_path: "url(#clipper)" do
+      draw x, y
+    end
   end  
 
   def draw(x_times, y_times)

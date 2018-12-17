@@ -8,5 +8,4 @@
 /.yardoc
 /toc.txt
 *.gem
-/test.svg
 /debug.rb

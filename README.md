@@ -25,31 +25,31 @@ Examples
 
 ### Grid: 5x5, Mirror: X (default options)
 
-![sample](assets/sample-strip-default.svg)
+![strip1](assets/strip1.svg)
 
-### Grid: 6x6, Mirror: Y
+### Grid: 6x6, Mirror: Y, Stroke: 4
 
-![sample](assets/sample-strip-6y.svg)
+![strip2](assets/strip2.svg)
 
-### Grid: 8x8, Mirror: X/Y, Density: 0.3
+### Grid: 8x8, Stroke: 7, Density: 0.3
 
-![sample](assets/sample-strip-8xylow.svg)
+![strip3](assets/strip3.svg)
 
-### Grid: 8x8, Mirror: X/Y, Density: 0.8
+### Grid: 7x7, Mirror: X/Y, Stroke: 3, Density: 0.8
 
-![sample](assets/sample-strip-8xyhigh.svg)
+![strip4](assets/strip4.svg)
 
 ### Increasing Stroke: 0.1 - 5.0
 
-![sample](assets/sample-strip-stroke.svg)
+![strip5](assets/strip5.svg)
 
 ### Increasing Density: 0.3 - 0.8
 
-![sample](assets/sample-strip-density.svg)
+![strip6](assets/strip6.svg)
 
 ### Mirror Styles: X, Y, Both, None
 
-![sample](assets/sample-strip-mirrors.svg)
+![strip7](assets/strip7.svg)
 
 
 Usage

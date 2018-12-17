@@ -1,0 +1,164 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg viewBox="0 0 410 60" width="100%" height="100%" 
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+<g transform="translate(0 0)">
+<rect x="0" y="0" width="60" height="60" fill="#fff"/>
+<defs>
+<clipPath id="clipper">
+<rect width="60" height="60"/>
+</clipPath>
+</defs>
+<g clip-path="url(#clipper)">
+<rect x="10" y="0" width="10" height="10" fill="#ca5e47" style="stroke:#ca5e47; stroke-width:4"/>
+<rect x="10" y="50" width="10" height="10" fill="#ca5e47" style="stroke:#ca5e47; stroke-width:4"/>
+<rect x="20" y="0" width="10" height="10" fill="#ca5e47" style="stroke:#ca5e47; stroke-width:4"/>
+<rect x="20" y="50" width="10" height="10" fill="#ca5e47" style="stroke:#ca5e47; stroke-width:4"/>
+<rect x="20" y="10" width="10" height="10" fill="#ca5e47" style="stroke:#ca5e47; stroke-width:4"/>
+<rect x="20" y="40" width="10" height="10" fill="#ca5e47" style="stroke:#ca5e47; stroke-width:4"/>
+<rect x="30" y="10" width="10" height="10" fill="#ca5e47" style="stroke:#ca5e47; stroke-width:4"/>
+<rect x="30" y="40" width="10" height="10" fill="#ca5e47" style="stroke:#ca5e47; stroke-width:4"/>
+<rect x="40" y="10" width="10" height="10" fill="#ca5e47" style="stroke:#ca5e47; stroke-width:4"/>
+<rect x="40" y="40" width="10" height="10" fill="#ca5e47" style="stroke:#ca5e47; stroke-width:4"/>
+<rect x="50" y="10" width="10" height="10" fill="#ca5e47" style="stroke:#ca5e47; stroke-width:4"/>
+<rect x="50" y="40" width="10" height="10" fill="#ca5e47" style="stroke:#ca5e47; stroke-width:4"/>
+<rect x="10" y="20" width="10" height="10" fill="#ca5e47" style="stroke:#ca5e47; stroke-width:4"/>
+<rect x="10" y="30" width="10" height="10" fill="#ca5e47" style="stroke:#ca5e47; stroke-width:4"/>
+</g>
+</g>
+<g transform="translate(70 0)">
+<rect x="0" y="0" width="60" height="60" fill="#fff"/>
+<defs>
+<clipPath id="clipper">
+<rect width="60" height="60"/>
+</clipPath>
+</defs>
+<g clip-path="url(#clipper)">
+<rect x="20" y="0" width="10" height="10" fill="#029098" style="stroke:#029098; stroke-width:4"/>
+<rect x="20" y="50" width="10" height="10" fill="#029098" style="stroke:#029098; stroke-width:4"/>
+<rect x="30" y="0" width="10" height="10" fill="#029098" style="stroke:#029098; stroke-width:4"/>
+<rect x="30" y="50" width="10" height="10" fill="#029098" style="stroke:#029098; stroke-width:4"/>
+<rect x="40" y="0" width="10" height="10" fill="#029098" style="stroke:#029098; stroke-width:4"/>
+<rect x="40" y="50" width="10" height="10" fill="#029098" style="stroke:#029098; stroke-width:4"/>
+<rect x="0" y="10" width="10" height="10" fill="#029098" style="stroke:#029098; stroke-width:4"/>
+<rect x="0" y="40" width="10" height="10" fill="#029098" style="stroke:#029098; stroke-width:4"/>
+<rect x="30" y="10" width="10" height="10" fill="#029098" style="stroke:#029098; stroke-width:4"/>
+<rect x="30" y="40" width="10" height="10" fill="#029098" style="stroke:#029098; stroke-width:4"/>
+<rect x="0" y="20" width="10" height="10" fill="#029098" style="stroke:#029098; stroke-width:4"/>
+<rect x="0" y="30" width="10" height="10" fill="#029098" style="stroke:#029098; stroke-width:4"/>
+<rect x="20" y="20" width="10" height="10" fill="#029098" style="stroke:#029098; stroke-width:4"/>
+<rect x="20" y="30" width="10" height="10" fill="#029098" style="stroke:#029098; stroke-width:4"/>
+<rect x="30" y="20" width="10" height="10" fill="#029098" style="stroke:#029098; stroke-width:4"/>
+<rect x="30" y="30" width="10" height="10" fill="#029098" style="stroke:#029098; stroke-width:4"/>
+<rect x="50" y="20" width="10" height="10" fill="#029098" style="stroke:#029098; stroke-width:4"/>
+<rect x="50" y="30" width="10" height="10" fill="#029098" style="stroke:#029098; stroke-width:4"/>
+</g>
+</g>
+<g transform="translate(140 0)">
+<rect x="0" y="0" width="60" height="60" fill="#fff"/>
+<defs>
+<clipPath id="clipper">
+<rect width="60" height="60"/>
+</clipPath>
+</defs>
+<g clip-path="url(#clipper)">
+<rect x="30" y="0" width="10" height="10" fill="#ed4927" style="stroke:#ed4927; stroke-width:4"/>
+<rect x="30" y="50" width="10" height="10" fill="#ed4927" style="stroke:#ed4927; stroke-width:4"/>
+<rect x="0" y="10" width="10" height="10" fill="#ed4927" style="stroke:#ed4927; stroke-width:4"/>
+<rect x="0" y="40" width="10" height="10" fill="#ed4927" style="stroke:#ed4927; stroke-width:4"/>
+<rect x="20" y="10" width="10" height="10" fill="#ed4927" style="stroke:#ed4927; stroke-width:4"/>
+<rect x="20" y="40" width="10" height="10" fill="#ed4927" style="stroke:#ed4927; stroke-width:4"/>
+<rect x="40" y="10" width="10" height="10" fill="#ed4927" style="stroke:#ed4927; stroke-width:4"/>
+<rect x="40" y="40" width="10" height="10" fill="#ed4927" style="stroke:#ed4927; stroke-width:4"/>
+<rect x="50" y="10" width="10" height="10" fill="#ed4927" style="stroke:#ed4927; stroke-width:4"/>
+<rect x="50" y="40" width="10" height="10" fill="#ed4927" style="stroke:#ed4927; stroke-width:4"/>
+<rect x="30" y="20" width="10" height="10" fill="#ed4927" style="stroke:#ed4927; stroke-width:4"/>
+<rect x="30" y="30" width="10" height="10" fill="#ed4927" style="stroke:#ed4927; stroke-width:4"/>
+<rect x="40" y="20" width="10" height="10" fill="#ed4927" style="stroke:#ed4927; stroke-width:4"/>
+<rect x="40" y="30" width="10" height="10" fill="#ed4927" style="stroke:#ed4927; stroke-width:4"/>
+</g>
+</g>
+<g transform="translate(210 0)">
+<rect x="0" y="0" width="60" height="60" fill="#fff"/>
+<defs>
+<clipPath id="clipper">
+<rect width="60" height="60"/>
+</clipPath>
+</defs>
+<g clip-path="url(#clipper)">
+<rect x="0" y="0" width="10" height="10" fill="#f1034d" style="stroke:#f1034d; stroke-width:4"/>
+<rect x="0" y="50" width="10" height="10" fill="#f1034d" style="stroke:#f1034d; stroke-width:4"/>
+<rect x="10" y="0" width="10" height="10" fill="#f1034d" style="stroke:#f1034d; stroke-width:4"/>
+<rect x="10" y="50" width="10" height="10" fill="#f1034d" style="stroke:#f1034d; stroke-width:4"/>
+<rect x="50" y="0" width="10" height="10" fill="#f1034d" style="stroke:#f1034d; stroke-width:4"/>
+<rect x="50" y="50" width="10" height="10" fill="#f1034d" style="stroke:#f1034d; stroke-width:4"/>
+<rect x="10" y="10" width="10" height="10" fill="#f1034d" style="stroke:#f1034d; stroke-width:4"/>
+<rect x="10" y="40" width="10" height="10" fill="#f1034d" style="stroke:#f1034d; stroke-width:4"/>
+<rect x="20" y="10" width="10" height="10" fill="#f1034d" style="stroke:#f1034d; stroke-width:4"/>
+<rect x="20" y="40" width="10" height="10" fill="#f1034d" style="stroke:#f1034d; stroke-width:4"/>
+<rect x="40" y="10" width="10" height="10" fill="#f1034d" style="stroke:#f1034d; stroke-width:4"/>
+<rect x="40" y="40" width="10" height="10" fill="#f1034d" style="stroke:#f1034d; stroke-width:4"/>
+<rect x="50" y="10" width="10" height="10" fill="#f1034d" style="stroke:#f1034d; stroke-width:4"/>
+<rect x="50" y="40" width="10" height="10" fill="#f1034d" style="stroke:#f1034d; stroke-width:4"/>
+<rect x="0" y="20" width="10" height="10" fill="#f1034d" style="stroke:#f1034d; stroke-width:4"/>
+<rect x="0" y="30" width="10" height="10" fill="#f1034d" style="stroke:#f1034d; stroke-width:4"/>
+<rect x="20" y="20" width="10" height="10" fill="#f1034d" style="stroke:#f1034d; stroke-width:4"/>
+<rect x="20" y="30" width="10" height="10" fill="#f1034d" style="stroke:#f1034d; stroke-width:4"/>
+</g>
+</g>
+<g transform="translate(280 0)">
+<rect x="0" y="0" width="60" height="60" fill="#fff"/>
+<defs>
+<clipPath id="clipper">
+<rect width="60" height="60"/>
+</clipPath>
+</defs>
+<g clip-path="url(#clipper)">
+<rect x="30" y="0" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+<rect x="30" y="50" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+<rect x="40" y="0" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+<rect x="40" y="50" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+<rect x="50" y="0" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+<rect x="50" y="50" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+<rect x="0" y="10" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+<rect x="0" y="40" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+<rect x="40" y="10" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+<rect x="40" y="40" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+<rect x="50" y="10" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+<rect x="50" y="40" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+<rect x="20" y="20" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+<rect x="20" y="30" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+<rect x="30" y="20" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+<rect x="30" y="30" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+<rect x="40" y="20" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+<rect x="40" y="30" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+<rect x="50" y="20" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+<rect x="50" y="30" width="10" height="10" fill="#3ef7e5" style="stroke:#3ef7e5; stroke-width:4"/>
+</g>
+</g>
+<g transform="translate(350 0)">
+<rect x="0" y="0" width="60" height="60" fill="#fff"/>
+<defs>
+<clipPath id="clipper">
+<rect width="60" height="60"/>
+</clipPath>
+</defs>
+<g clip-path="url(#clipper)">
+<rect x="0" y="0" width="10" height="10" fill="#51b658" style="stroke:#51b658; stroke-width:4"/>
+<rect x="0" y="50" width="10" height="10" fill="#51b658" style="stroke:#51b658; stroke-width:4"/>
+<rect x="30" y="0" width="10" height="10" fill="#51b658" style="stroke:#51b658; stroke-width:4"/>
+<rect x="30" y="50" width="10" height="10" fill="#51b658" style="stroke:#51b658; stroke-width:4"/>
+<rect x="50" y="0" width="10" height="10" fill="#51b658" style="stroke:#51b658; stroke-width:4"/>
+<rect x="50" y="50" width="10" height="10" fill="#51b658" style="stroke:#51b658; stroke-width:4"/>
+<rect x="30" y="10" width="10" height="10" fill="#51b658" style="stroke:#51b658; stroke-width:4"/>
+<rect x="30" y="40" width="10" height="10" fill="#51b658" style="stroke:#51b658; stroke-width:4"/>
+<rect x="20" y="20" width="10" height="10" fill="#51b658" style="stroke:#51b658; stroke-width:4"/>
+<rect x="20" y="30" width="10" height="10" fill="#51b658" style="stroke:#51b658; stroke-width:4"/>
+</g>
+</g>
+
+</svg>
