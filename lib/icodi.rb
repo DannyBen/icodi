@@ -26,7 +26,7 @@ class Icodi < Victor::SVGBase
   end
 
   def stroke
-    options[:stroke] ||= 1
+    options[:stroke] ||= 0.1
   end
 
   def background
