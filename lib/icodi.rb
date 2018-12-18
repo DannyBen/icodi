@@ -6,44 +6,41 @@ class Icodi < Victor::SVGBase
 
   def initialize(text = nil, options = {})
     text, options = nil, text if text.is_a? Hash
-    @text, @options = text, options.dup
+    
+    @text = text
+    @options = default_options.merge options
+
     super template: template, viewBox: "0 0 #{size} #{size}", clip_path: "url(#rect)"
+    
     generate
   end
 
-  def template
-    options[:template] ||= :default
+  def method_missing(method_name, *_args, &_block)
+    respond_to?(method_name) ? options[method_name] : super
   end
 
-  def pixels
-    options[:pixels] ||= 5
-  end
-
-  def density
-    options[:density] ||= 0.5
-  end
-
-  def stroke
-    options[:stroke] ||= 0.1
-  end
-
-  def background
-    options[:background] ||= '#fff'
-  end
-
-  def color
-    options[:color] ||= "#%06x" % (random(:color).rand * 0xffffff)
-  end
-
-  def mirror
-    options[:mirror] ||= :x
-  end
-
-  def jitter
-    options[:jitter] ||= 0
+  def respond_to?(method_name, include_private = false)
+    options.has_key?(method_name) ? true : super
   end
 
 private
+
+  def default_options
+    {
+      template: :default, 
+      pixels: 5,
+      density: 0.5,
+      stroke: 0.1,
+      background: '#fff',
+      color: random_color,
+      mirror: :x,
+      jitter: 0,
+    }
+  end
+
+  def random_color
+    "#%06x" % (random(:color).rand * 0xffffff)
+  end
 
   def seed(string)
     Digest::MD5.hexdigest(string).to_i(16)
@@ -63,15 +60,15 @@ private
     @style ||= { stroke: color, stroke_width: stroke }
   end
 
-  def mirror_x
+  def mirror_x?
     [:x, :both].include? mirror
   end
 
-  def mirror_y
+  def mirror_y?
     [:y, :both].include? mirror
   end
 
-  def mirror_both
+  def mirror_both?
     mirror == :both
   end
 
@@ -84,8 +81,8 @@ private
     end
 
     half = (pixels / 2.0).round
-    x = mirror_x ? half : pixels
-    y = mirror_y ? half : pixels
+    x = mirror_x? ? half : pixels
+    y = mirror_y? ? half : pixels
 
     element :g, clip_path: "url(#clipper)" do
       draw x, y
@@ -101,23 +98,42 @@ private
   end  
 
   def add_pixels(x, y)
-    x, y = add_jitter(x, y) if jitter > 0
+    x, y = add_jitter x, y
+
     draw_pixel x, y
-    draw_pixel pixels-1-x, y if mirror_x and x != pixels/2
-    draw_pixel x, pixels-1-y if mirror_y and y != pixels/2
-    draw_pixel pixels-1-x, pixels-1-y if mirror_both and x != pixels/2 and y != pixels/2
+    draw_pixel mirror_value(x), y if mirror? x: x
+    draw_pixel x, mirror_value(y) if mirror? y: y
+    draw_pixel mirror_value(x), mirror_value(y) if mirror? x: x, y: y
+  end
+
+  def mirror?(x: nil, y: nil)
+    if x and y
+      mirror_both? and !mid?(x: x) and !mid?(y: y)
+    elsif x
+      mirror_x? and !mid? x: x
+    elsif y
+      mirror_y? and !mid? y: y
+    end
+  end
+
+  def mid?(x: nil, y: nil)
+    x ? x == pixels/2 : y ? y == pixels/2 : nil
   end
 
   def add_jitter(x, y)
-    return [x, y] unless random(:jitter).rand < jitter
+    return [x, y] unless jitter > 0 and random(:jitter).rand < jitter
     
-    x += [0, 0.5, -0.5][random(:jitter).rand(0..2)] unless mirror_x and x == pixels/2
-    y += [0, 0.5, -0.5][random(:jitter).rand(0..2)] unless mirror_y and y == pixels/2
+    x += [0, 0.5, -0.5][random(:jitter).rand(3)] unless mirror_x? and mid? x: x
+    y += [0, 0.5, -0.5][random(:jitter).rand(3)] unless mirror_y? and mid? y: y
     [x, y]
   end
 
   def draw_pixel(x, y)
     element :rect, x: x*10, y: y*10, width: 10, height: 10, fill: color, style: style
+  end
+
+  def mirror_value(value)
+    pixels - 1 - value
   end
 
 end
