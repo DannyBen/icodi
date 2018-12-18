@@ -16,5 +16,6 @@ module IcodiCore
     def random_sets
       @random_sets ||= {}
     end
+
   end
 end

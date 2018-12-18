@@ -1,6 +1,5 @@
 module IcodiCore
   module OptionHandling
-
     def method_missing(method_name, *_args, &_block)
       respond_to?(method_name) ? options[method_name] : super
     end
