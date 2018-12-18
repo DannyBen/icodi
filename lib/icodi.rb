@@ -98,23 +98,38 @@ private
   end  
 
   def add_pixels(x, y)
-    x, y = add_jitter(x, y) if jitter > 0
+    x, y = add_jitter x, y
+
     draw_pixel x, y
-    draw_pixel pixels-1-x, y if mirror_x and x != pixels/2
-    draw_pixel x, pixels-1-y if mirror_y and y != pixels/2
-    draw_pixel pixels-1-x, pixels-1-y if mirror_both and x != pixels/2 and y != pixels/2
+    draw_pixel mirror_value(x), y if mirror? x: x
+    draw_pixel x, mirror_value(y) if mirror? y: y
+    draw_pixel mirror_value(x), mirror_value(y) if mirror? x: x, y: y
+  end
+
+  def mirror?(x: nil, y: nil)
+    if x and y
+      mirror_both and x != pixels/2 and y != pixels/2
+    elsif x
+      mirror_x and x != pixels/2
+    elsif y
+      mirror_y and y != pixels/2
+    end
   end
 
   def add_jitter(x, y)
-    return [x, y] unless random(:jitter).rand < jitter
+    return [x, y] unless jitter > 0 and random(:jitter).rand < jitter
     
-    x += [0, 0.5, -0.5][random(:jitter).rand(0..2)] unless mirror_x and x == pixels/2
-    y += [0, 0.5, -0.5][random(:jitter).rand(0..2)] unless mirror_y and y == pixels/2
+    x += [0, 0.5, -0.5][random(:jitter).rand(3)] unless mirror_x and x == pixels/2
+    y += [0, 0.5, -0.5][random(:jitter).rand(3)] unless mirror_y and y == pixels/2
     [x, y]
   end
 
   def draw_pixel(x, y)
     element :rect, x: x*10, y: y*10, width: 10, height: 10, fill: color, style: style
+  end
+
+  def mirror_value(value)
+    pixels - 1 - value
   end
 
 end
