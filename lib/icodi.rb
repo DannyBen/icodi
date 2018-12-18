@@ -1,49 +1,45 @@
 require 'victor'
 require 'digest/md5'
+require 'forwardable'
+require 'ostruct'
 
 class Icodi < Victor::SVGBase
+  extend Forwardable
+  
   attr_reader :text, :options
+
+  def_delegators :options, 
+    :pixels, :background, :mirror, :density, :jitter, :color, :stroke
 
   def initialize(text = nil, options = {})
     text, options = nil, text if text.is_a? Hash
-    @text, @options = text, options.dup
+    
+    @text = text
+    @options = OpenStruct.new default_options.merge options
+
     super template: template, viewBox: "0 0 #{size} #{size}", clip_path: "url(#rect)"
+    
     generate
   end
 
-  def template
-    options[:template] ||= :default
-  end
-
-  def pixels
-    options[:pixels] ||= 5
-  end
-
-  def density
-    options[:density] ||= 0.5
-  end
-
-  def stroke
-    options[:stroke] ||= 0.1
-  end
-
-  def background
-    options[:background] ||= '#fff'
-  end
-
-  def color
-    options[:color] ||= "#%06x" % (random(:color).rand * 0xffffff)
-  end
-
-  def mirror
-    options[:mirror] ||= :x
-  end
-
-  def jitter
-    options[:jitter] ||= 0
-  end
-
 private
+
+  def default_options
+    {
+      template: :default, 
+      pixels: 5,
+      density: 0.5,
+      stroke: 0.1,
+      background: '#fff',
+      color: random_color,
+      mirror: :x,
+      jitter: 0,
+    }
+  end
+
+  def random_color
+    "#%06x" % (random(:color).rand * 0xffffff)
+  end
 
   def seed(string)
     Digest::MD5.hexdigest(string).to_i(16)
