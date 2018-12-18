@@ -60,15 +60,15 @@ private
     @style ||= { stroke: color, stroke_width: stroke }
   end
 
-  def mirror_x
+  def mirror_x?
     [:x, :both].include? mirror
   end
 
-  def mirror_y
+  def mirror_y?
     [:y, :both].include? mirror
   end
 
-  def mirror_both
+  def mirror_both?
     mirror == :both
   end
 
@@ -81,8 +81,8 @@ private
     end
 
     half = (pixels / 2.0).round
-    x = mirror_x ? half : pixels
-    y = mirror_y ? half : pixels
+    x = mirror_x? ? half : pixels
+    y = mirror_y? ? half : pixels
 
     element :g, clip_path: "url(#clipper)" do
       draw x, y
@@ -108,19 +108,23 @@ private
 
   def mirror?(x: nil, y: nil)
     if x and y
-      mirror_both and x != pixels/2 and y != pixels/2
+      mirror_both? and !mid?(x: x) and !mid?(y: y)
     elsif x
-      mirror_x and x != pixels/2
+      mirror_x? and !mid? x: x
     elsif y
-      mirror_y and y != pixels/2
+      mirror_y? and !mid? y: y
     end
+  end
+
+  def mid?(x: nil, y: nil)
+    x ? x == pixels/2 : y ? y == pixels/2 : nil
   end
 
   def add_jitter(x, y)
     return [x, y] unless jitter > 0 and random(:jitter).rand < jitter
     
-    x += [0, 0.5, -0.5][random(:jitter).rand(3)] unless mirror_x and x == pixels/2
-    y += [0, 0.5, -0.5][random(:jitter).rand(3)] unless mirror_y and y == pixels/2
+    x += [0, 0.5, -0.5][random(:jitter).rand(3)] unless mirror_x? and mid? x: x
+    y += [0, 0.5, -0.5][random(:jitter).rand(3)] unless mirror_y? and mid? y: y
     [x, y]
   end
 
