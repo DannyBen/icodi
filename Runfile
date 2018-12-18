@@ -33,6 +33,10 @@ action :watch do
   run! "filewatcher {Runfile,*.rb} 'run make'"
 end
 
+action :s, :server do
+  run! "ruby server.rb"
+end
+
 action :logo do
   svg = Victor::SVG.new viewBox: "0 0 130 30"
 
@@ -55,42 +59,52 @@ action :logo do
   svg.save 'logo'
 end
 
+help   "Generate TOC to toc.txt"
+action :toc do
+  run! 'gh-md-toc README.md > toc.txt'
+end
+
 action :strip do
   p seed = rand(1..10000000)
 
-  make_strip 7, 5 do |i|
-    Icodi.new "828#{i}"
+  make_strip :default, 6, 5 do |i|
+    Icodi.new "2897582#{i}"
   end
 
-  make_strip 6, 6 do |i|
+  make_strip :mirror_y, 6, 6 do |i|
     Icodi.new "7663746#{i}", pixels: 6, mirror: :y, stroke: 4
   end
 
-  make_strip 5, 8 do |i|
+  make_strip :thick_stroke, 5, 8 do |i|
     Icodi.new "6350260#{i}", pixels: 8, stroke: 7, density: 0.3
   end
 
-  make_strip 5, 7 do |i|
+  make_strip :mirror_both, 5, 7 do |i|
     Icodi.new "5226548#{i}", pixels: 7, mirror: :both, stroke: 3, density: 0.6
   end
 
-  make_strip 5, 5 do |i|
-    Icodi.new "7188799", pixels: 5, stroke: 0.1 + i
+  make_strip :strokes, 5, 5 do |i|
+    Icodi.new "6885186", pixels: 5, stroke: 0.1 + i
   end
 
-  make_strip 5, 5 do |i|
+  make_strip :densities, 5, 5 do |i|
     Icodi.new "4334980", pixels: 5, density: 0.3 + i*0.1
   end
 
-  make_strip 4, 6 do |i|
-    Icodi.new "4731123", pixels: 6, mirror: [:x, :y, :both, :none][i], density: 0.3, stroke: 5
+  make_strip :mirrors, 4, 6 do |i|
+    Icodi.new "1324318", pixels: 6, mirror: [:x, :y, :both, :none][i], density: 0.3, stroke: 5
+  end
+
+  make_strip :jitter, 5, 5 do |i|
+    Icodi.new "5187111#{i}", pixels: 5, jitter: 0.9, stroke: 2
+  end
+
+  make_strip :jitters, 5, 7 do |i|
+    Icodi.new "6021147", pixels: 7, jitter: i*0.2, stroke: 2
   end
 end
 
-def make_strip(count, pixels)
-  @strip_number ||= 0
-  @strip_number += 1
-
+def make_strip(name, count, pixels)
   svg = Victor::SVG.new viewBox: "0 0 #{count*(pixels+1)*10-10} #{pixels*10}"
 
   svg.build do
@@ -99,7 +113,7 @@ def make_strip(count, pixels)
     end
   end
 
-  svg.save "assets/strip#{@strip_number}"
+  svg.save "assets/strip_#{name}"
 end
 
 require_relative 'debug' if File.exist? 'debug.rb'
