@@ -8,8 +8,6 @@ class Icodi < Victor::SVGBase
     text, options = nil, text if text.is_a? Hash
     @text, @options = text, options.dup
     super template: template, viewBox: "0 0 #{size} #{size}", clip_path: "url(#rect)"
-
-    first_random_hit
     generate
   end
 
@@ -34,11 +32,15 @@ class Icodi < Victor::SVGBase
   end
 
   def color
-    options[:color] ||= "#%06x" % (random.rand * 0xffffff)
+    options[:color] ||= "#%06x" % (random(:color).rand * 0xffffff)
   end
 
   def mirror
     options[:mirror] ||= :x
+  end
+
+  def jitter
+    options[:jitter] ||= 0
   end
 
 private
@@ -47,8 +49,10 @@ private
     Digest::MD5.hexdigest(string).to_i(16)
   end
 
-  def random
-    @random ||= (text ? Random.new(seed(text)) : Random.new)
+  def random(set = nil)
+    @random_sets ||= {}
+    set ||= :default
+    @random_sets[set] ||= (text ? Random.new(seed(text)) : Random.new)
   end
 
   def size
@@ -69,10 +73,6 @@ private
 
   def mirror_both
     mirror == :both
-  end
-
-  def first_random_hit
-    options[:color] ? random.rand : color
   end
 
   def generate
@@ -101,10 +101,19 @@ private
   end  
 
   def add_pixels(x, y)
+    x, y = add_jitter(x, y) if jitter > 0
     draw_pixel x, y
     draw_pixel pixels-1-x, y if mirror_x and x != pixels/2
     draw_pixel x, pixels-1-y if mirror_y and y != pixels/2
     draw_pixel pixels-1-x, pixels-1-y if mirror_both and x != pixels/2 and y != pixels/2
+  end
+
+  def add_jitter(x, y)
+    return [x, y] unless random(:jitter).rand < jitter
+    
+    x += [0, 0.5, -0.5][random(:jitter).rand(0..2)] unless mirror_x and x == pixels/2
+    y += [0, 0.5, -0.5][random(:jitter).rand(0..2)] unless mirror_y and y == pixels/2
+    [x, y]
   end
 
   def draw_pixel(x, y)

@@ -5,6 +5,7 @@ Icodi - Deterministic Random SVG Icon Generator
 
 [![Gem Version](https://badge.fury.io/rb/icodi.svg)](https://badge.fury.io/rb/icodi)
 [![Build Status](https://travis-ci.com/DannyBen/icodi.svg?branch=master)](https://travis-ci.com/DannyBen/icodi)
+[![Maintainability](https://api.codeclimate.com/v1/badges/0b74be3877413501c7a9/maintainability)](https://codeclimate.com/github/DannyBen/icodi/maintainability)
 
 ---
 
@@ -12,6 +13,16 @@ Generate repeatable random SVG icons from any string, similar to
 [GitHub identicons].
 
 ---
+
+Table of Contents
+--------------------------------------------------
+
+- [Installation](#installation)
+- [Examples](#examples)
+- [Usage](#usage)
+- [Options](#options)
+- [Using with Sinatra](#using-with-sinatra)
+
 
 Installation
 --------------------------------------------------
@@ -23,33 +34,41 @@ Installation
 Examples
 --------------------------------------------------
 
-### Grid: 5x5, Mirror: X (default options)
+### Grid: 5x5, Mirror: X (default settings)
 
-![strip1](assets/strip1.svg)
+![strip1](assets/strip_default.svg)
 
 ### Grid: 6x6, Mirror: Y, Stroke: 4
 
-![strip2](assets/strip2.svg)
+![strip2](assets/strip_mirror_y.svg)
 
 ### Grid: 8x8, Stroke: 7, Density: 0.3
 
-![strip3](assets/strip3.svg)
+![strip3](assets/strip_thick_stroke.svg)
 
 ### Grid: 7x7, Mirror: X/Y, Stroke: 3, Density: 0.8
 
-![strip4](assets/strip4.svg)
+![strip4](assets/strip_mirror_both.svg)
+
+### Grid: 5x5, Jitter: 0.9, Stroke: 2
+
+![strip4](assets/strip_jitter.svg)
 
 ### Increasing Stroke: 0.1 - 5.0
 
-![strip5](assets/strip5.svg)
+![strip5](assets/strip_strokes.svg)
 
 ### Increasing Density: 0.3 - 0.8
 
-![strip6](assets/strip6.svg)
+![strip6](assets/strip_densities.svg)
+
+### Increasing Jitter: 0 - 1.0
+
+![strip6](assets/strip_jitters.svg)
 
 ### Mirror Styles: X, Y, Both, None
 
-![strip7](assets/strip7.svg)
+![strip7](assets/strip_mirrors.svg)
 
 
 Usage
@@ -98,13 +117,23 @@ Parameter   | Default    | Type    | Description
 ------------|------------|---------|---------------------
 `pixels`    | `5`        | Integer | Grid size.
 `mirror`    | `:x`       | Symbol  | Mirroring mode: `:x`, `:y`, `:both` or `:none`.
-`color`     | Deterministic Random  | String | A color string for the pixels.
+`color`     | Deterministic Random | String | A color string for the pixels.
 `density`   | `0.5`      | Float   | A value between 0 and 1 representing the chance for a pixel to be drawn. Lower values mean less pixels.
 `stroke`    | `0.1`      | Float   | Width of the border around each pixel. Note that each pixel is a 10x10 box, so a stroke of 1 means it will take 10% of the box. Higher values generate more overlap between the pixels.
+`jitter`    | `0`        | Float   | A value between 0 and 1 representing the chance for a pixel to be dislocated by half of its size in a random direction.
 `background`| `#fff`     | String  | A named SVG color string (`blue`, `yellow` etc.) or RGB color (for example `#dddddd`).
 `template`  | `:default` | Symbol/String | SVG template to use. Can be `:default`, `:html` or a path to a file. Read more on [Victor SVG Templates].
 
 ---
+
+
+Using with Sinatra
+--------------------------------------------------
+
+To create a Sinatra server that serves Icodi images, see the 
+[server.rb](server.rb) example code.
+
+
 
 [GitHub identicons]: https://blog.github.com/2013-08-14-identicons/
 [Victor SVG Templates]: https://github.com/DannyBen/victor#svg-templates
