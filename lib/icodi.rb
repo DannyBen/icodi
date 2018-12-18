@@ -1,25 +1,26 @@
 require 'victor'
 require 'digest/md5'
-require 'forwardable'
-require 'ostruct'
 
 class Icodi < Victor::SVGBase
-  extend Forwardable
-  
   attr_reader :text, :options
-
-  def_delegators :options, 
-    :pixels, :background, :mirror, :density, :jitter, :color, :stroke
 
   def initialize(text = nil, options = {})
     text, options = nil, text if text.is_a? Hash
     
     @text = text
-    @options = OpenStruct.new default_options.merge options
+    @options = default_options.merge options
 
     super template: template, viewBox: "0 0 #{size} #{size}", clip_path: "url(#rect)"
     
     generate
+  end
+
+  def method_missing(method_name, *_args, &_block)
+    respond_to?(method_name) ? options[method_name] : super
+  end
+
+  def respond_to?(method_name, include_private = false)
+    options.has_key?(method_name) ? true : super
   end
 
 private
