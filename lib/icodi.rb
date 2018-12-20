@@ -9,13 +9,13 @@ class Icodi < Victor::SVGBase
 
   attr_reader :text, :options
 
-  def initialize(text = nil, options = {})
-    text, options = nil, text if text.is_a? Hash
+  def initialize(text = nil, opts = {})
+    text, opts = nil, text if text.is_a? Hash
     
     @text = text
-    @options = default_options.merge options
+    @options = default_options.merge opts
 
-    super template: template, viewBox: "0 0 #{size} #{size}", clip_path: "url(#rect)"
+    super template: template, viewBox: "0 0 #{size} #{size}", id: id
     
     generate
   end
@@ -23,9 +23,11 @@ class Icodi < Victor::SVGBase
 private
 
   def generate
+    clip_path_id = "#{id}-#{random_id}"
+
     element :rect, x: 0, y: 0, width: size, height: size, fill: background
     element :defs do
-      element :clipPath, id: :clipper do
+      element :clipPath, id: clip_path_id do
         element :rect, width: size, height: size
       end
     end
@@ -34,7 +36,7 @@ private
     x = mirror_x? ? half : pixels
     y = mirror_y? ? half : pixels
 
-    element :g, clip_path: "url(#clipper)" do
+    element :g, clip_path: "url(##{clip_path_id})" do
       draw x, y
     end
   end  
@@ -88,4 +90,7 @@ private
     pixels - 1 - value
   end
 
+  def random_id
+    random(:nonvisual).rand(9999999)
+  end
 end
