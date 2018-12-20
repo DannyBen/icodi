@@ -59,10 +59,16 @@ private
   end
 
   def add_jitter(x, y)
-    return [x, y] unless jitter > 0 and random(:jitter).rand < jitter
-    
-    x += [0, 0.5, -0.5][random(:jitter).rand(3)] unless mirror_x? and mid? x: x
-    y += [0, 0.5, -0.5][random(:jitter).rand(3)] unless mirror_y? and mid? y: y
+    if jitter > 0 and random(:jitter).rand < jitter
+      add_jitter! x, y
+    else
+      [x, y] 
+    end
+  end
+
+  def add_jitter!(x, y)
+    x += random_jitter unless mirror_x? and mid? x: x
+    y += random_jitter unless mirror_y? and mid? y: y
     [x, y]
   end
 
@@ -93,4 +99,9 @@ private
   def random_id
     random(:nonvisual).rand(9999999)
   end
+
+  def random_jitter
+    [0, 0.5, -0.5][random(:jitter).rand(3)]
+  end
+
 end
