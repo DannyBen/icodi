@@ -1,0 +1,20 @@
+<rect x="0" y="0" width="40" height="40" fill="black"/>
+<defs>
+<clipPath id="test-8125001">
+<rect width="40" height="40"/>
+</clipPath>
+</defs>
+<g clip-path="url(#test-8125001)">
+<rect x="-5.0" y="5.0" width="10" height="10" fill="#faa" style="stroke:#faa; stroke-width:3"/>
+<rect x="35.0" y="5.0" width="10" height="10" fill="#faa" style="stroke:#faa; stroke-width:3"/>
+<rect x="-5.0" y="25.0" width="10" height="10" fill="#faa" style="stroke:#faa; stroke-width:3"/>
+<rect x="35.0" y="25.0" width="10" height="10" fill="#faa" style="stroke:#faa; stroke-width:3"/>
+<rect x="10" y="0" width="10" height="10" fill="#faa" style="stroke:#faa; stroke-width:3"/>
+<rect x="20" y="0" width="10" height="10" fill="#faa" style="stroke:#faa; stroke-width:3"/>
+<rect x="10" y="30" width="10" height="10" fill="#faa" style="stroke:#faa; stroke-width:3"/>
+<rect x="20" y="30" width="10" height="10" fill="#faa" style="stroke:#faa; stroke-width:3"/>
+<rect x="5.0" y="15.0" width="10" height="10" fill="#faa" style="stroke:#faa; stroke-width:3"/>
+<rect x="25.0" y="15.0" width="10" height="10" fill="#faa" style="stroke:#faa; stroke-width:3"/>
+<rect x="5.0" y="15.0" width="10" height="10" fill="#faa" style="stroke:#faa; stroke-width:3"/>
+<rect x="25.0" y="15.0" width="10" height="10" fill="#faa" style="stroke:#faa; stroke-width:3"/>
+</g>
