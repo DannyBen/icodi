@@ -18,6 +18,7 @@ module IcodiCore
         color: random_color,
         mirror: :x,
         jitter: 0,
+        id: :icodi,
       }
     end
 

@@ -1,21 +1,20 @@
 <rect x="0" y="0" width="50" height="50" fill="#fff"/>
 <defs>
-<clipPath id="clipper">
+<clipPath id="icodi-8125001">
 <rect width="50" height="50"/>
 </clipPath>
 </defs>
-<g clip-path="url(#clipper)">
-<rect x="10" y="0" width="10" height="10" fill="#8ef8be" style="stroke:#8ef8be; stroke-width:0.1"/>
-<rect x="30" y="0" width="10" height="10" fill="#8ef8be" style="stroke:#8ef8be; stroke-width:0.1"/>
-<rect x="20" y="0" width="10" height="10" fill="#8ef8be" style="stroke:#8ef8be; stroke-width:0.1"/>
-<rect x="10" y="10" width="10" height="10" fill="#8ef8be" style="stroke:#8ef8be; stroke-width:0.1"/>
-<rect x="30" y="10" width="10" height="10" fill="#8ef8be" style="stroke:#8ef8be; stroke-width:0.1"/>
-<rect x="20" y="10" width="10" height="10" fill="#8ef8be" style="stroke:#8ef8be; stroke-width:0.1"/>
-<rect x="20" y="15.0" width="10" height="10" fill="#8ef8be" style="stroke:#8ef8be; stroke-width:0.1"/>
-<rect x="0" y="30" width="10" height="10" fill="#8ef8be" style="stroke:#8ef8be; stroke-width:0.1"/>
-<rect x="40" y="30" width="10" height="10" fill="#8ef8be" style="stroke:#8ef8be; stroke-width:0.1"/>
-<rect x="15.0" y="35.0" width="10" height="10" fill="#8ef8be" style="stroke:#8ef8be; stroke-width:0.1"/>
-<rect x="25.0" y="35.0" width="10" height="10" fill="#8ef8be" style="stroke:#8ef8be; stroke-width:0.1"/>
-<rect x="0" y="40" width="10" height="10" fill="#8ef8be" style="stroke:#8ef8be; stroke-width:0.1"/>
-<rect x="40" y="40" width="10" height="10" fill="#8ef8be" style="stroke:#8ef8be; stroke-width:0.1"/>
+<g clip-path="url(#icodi-8125001)">
+<rect x="0" y="0" width="10" height="10" fill="#60f29a" style="stroke:#60f29a; stroke-width:0.1"/>
+<rect x="40" y="0" width="10" height="10" fill="#60f29a" style="stroke:#60f29a; stroke-width:0.1"/>
+<rect x="10" y="0" width="10" height="10" fill="#60f29a" style="stroke:#60f29a; stroke-width:0.1"/>
+<rect x="30" y="0" width="10" height="10" fill="#60f29a" style="stroke:#60f29a; stroke-width:0.1"/>
+<rect x="0" y="10" width="10" height="10" fill="#60f29a" style="stroke:#60f29a; stroke-width:0.1"/>
+<rect x="40" y="10" width="10" height="10" fill="#60f29a" style="stroke:#60f29a; stroke-width:0.1"/>
+<rect x="10" y="10" width="10" height="10" fill="#60f29a" style="stroke:#60f29a; stroke-width:0.1"/>
+<rect x="30" y="10" width="10" height="10" fill="#60f29a" style="stroke:#60f29a; stroke-width:0.1"/>
+<rect x="20" y="10" width="10" height="10" fill="#60f29a" style="stroke:#60f29a; stroke-width:0.1"/>
+<rect x="20" y="30" width="10" height="10" fill="#60f29a" style="stroke:#60f29a; stroke-width:0.1"/>
+<rect x="10" y="40" width="10" height="10" fill="#60f29a" style="stroke:#60f29a; stroke-width:0.1"/>
+<rect x="30" y="40" width="10" height="10" fill="#60f29a" style="stroke:#60f29a; stroke-width:0.1"/>
 </g>

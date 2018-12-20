@@ -122,6 +122,7 @@ Parameter   | Default    | Type    | Description
 `stroke`    | `0.1`      | Float   | Width of the border around each pixel. Note that each pixel is a 10x10 box, so a stroke of 1 means it will take 10% of the box. Higher values generate more overlap between the pixels.
 `jitter`    | `0`        | Float   | A value between 0 and 1 representing the chance for a pixel to be dislocated by half of its size in a random direction.
 `background`| `#fff`     | String  | A named SVG color string (`blue`, `yellow` etc.) or RGB color (for example `#dddddd`).
+`id`        | `icodi`    | String  | The ID to assign the SVG object. Normally this should not matter, but if you intend to embed this icon in an HTML, or in another SVG, this can be useful.
 `template`  | `:default` | Symbol/String | SVG template to use. Can be `:default`, `:html` or a path to a file. Read more on [Victor SVG Templates].
 
 ---
