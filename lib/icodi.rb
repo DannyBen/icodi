@@ -61,9 +61,13 @@ private
   def add_jitter(x, y)
     return [x, y] unless jitter > 0 and random(:jitter).rand < jitter
     
-    x += [0, 0.5, -0.5][random(:jitter).rand(3)] unless mirror_x? and mid? x: x
-    y += [0, 0.5, -0.5][random(:jitter).rand(3)] unless mirror_y? and mid? y: y
+    x += get_random_jitter unless mirror_x? and mid? x: x
+    y += get_random_jitter unless mirror_y? and mid? y: y
     [x, y]
+  end
+
+  def get_random_jitter
+    [0, 0.5, -0.5][random(:jitter).rand(3)]
   end
 
   def draw_pixel(x, y)
