@@ -18,6 +18,7 @@ Table of Contents
 --------------------------------------------------
 
 - [Installation](#installation)
+- [Demo](#demo)
 - [Examples](#examples)
 - [Usage](#usage)
 - [Options](#options)
@@ -28,6 +29,14 @@ Installation
 --------------------------------------------------
 
     $ gem install icodi
+
+
+
+Demo
+--------------------------------------------------
+
+Visit the [Icodi Playground] to experiment with the parameters (may take a 
+few minutes to boot).
 
 
 
@@ -136,5 +145,7 @@ To create a Sinatra server that serves Icodi images, see the
 
 
 
+
 [GitHub identicons]: https://blog.github.com/2013-08-14-identicons/
 [Victor SVG Templates]: https://github.com/DannyBen/victor#svg-templates
+[Icodi Playground]: http://icodi.dannyb.co/sandbox
