@@ -4,7 +4,7 @@ Icodi - Deterministic Random SVG Icon Generator
 ==================================================
 
 [![Gem Version](https://badge.fury.io/rb/icodi.svg)](https://badge.fury.io/rb/icodi)
-[![Build Status](https://travis-ci.com/DannyBen/icodi.svg?branch=master)](https://travis-ci.com/DannyBen/icodi)
+[![Build Status](https://github.com/DannyBen/icodi/workflows/Test/badge.svg)](https://github.com/DannyBen/icodi/actions?query=workflow%3ATest)
 [![Maintainability](https://api.codeclimate.com/v1/badges/0b74be3877413501c7a9/maintainability)](https://codeclimate.com/github/DannyBen/icodi/maintainability)
 
 ---
