@@ -1,13 +1,17 @@
+# Icodi Server Sinatra Example
+#
+# Download this config.ru file, then start the server with:
+#
+#   $ rackup -p 3000 -o 0.0.0.0
+#
+# Then render some images in your browser:
+#
+# - http://localhost:3000
+# - http://localhost:3000/you@your-email.com
+# - http://localhost:3000/you@your-email.com?pixels=5&jitter=0.5
+
 require 'sinatra'
 require 'icodi'
-
-if development?
-  require "sinatra/reloader"
-  also_reload 'lib/icodi.rb'
-end
-
-set :bind, '0.0.0.0'
-set :port, 3000
 
 get '/*' do
   seed = params[:splat].first  
@@ -25,3 +29,5 @@ get '/*' do
   content_type 'image/svg+xml'
   Icodi.new(seed, options).render
 end
+
+run Sinatra::Application

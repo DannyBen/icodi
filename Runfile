@@ -34,7 +34,7 @@ action :watch do
 end
 
 action :s, :server do
-  run! "ruby server.rb"
+  run! "rackup -p 3000 -o 0.0.0.0"
 end
 
 action :logo do

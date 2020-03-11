@@ -142,7 +142,7 @@ Using with Sinatra
 --------------------------------------------------
 
 To create a Sinatra server that serves Icodi images, see the 
-[server.rb](server.rb) example code.
+[config.ru](config.ru) example code.
 
 
 Contributing / Support
