@@ -23,6 +23,7 @@ Table of Contents
 - [Usage](#usage)
 - [Options](#options)
 - [Using with Sinatra](#using-with-sinatra)
+- [Contributing / Support](#contributing--support)
 
 
 Installation
@@ -144,8 +145,15 @@ To create a Sinatra server that serves Icodi images, see the
 [server.rb](server.rb) example code.
 
 
+Contributing / Support
+--------------------------------------------------
 
+If you experience any issue, have a question or a suggestion, or if you wish
+to contribute, feel free to [open an issue][issues].
+
+---
 
 [GitHub identicons]: https://blog.github.com/2013-08-14-identicons/
 [Victor SVG Templates]: https://github.com/DannyBen/victor#svg-templates
 [Icodi Playground]: http://icodi.dannyb.co/sandbox
+[issues]: https://github.com/DannyBen/icodi/issues
