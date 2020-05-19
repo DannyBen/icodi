@@ -7,7 +7,7 @@ describe Icodi do
 
   context "given a string" do
     it "generates consistent svg" do
-      expect(subject.to_s).to match_fixture 'render1'
+      expect(subject.to_s).to match_approval 'render1'
     end
   end
 
@@ -18,7 +18,7 @@ describe Icodi do
     }}
     
     it "works" do
-      expect(subject.to_s).to match_fixture 'render2'
+      expect(subject.to_s).to match_approval 'render2'
     end
   end
 end
