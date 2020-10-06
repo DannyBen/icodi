@@ -36,8 +36,7 @@ Installation
 Demo
 --------------------------------------------------
 
-Visit the [Icodi Playground] to experiment with the parameters (may take a 
-few minutes to boot).
+Visit the [Icodi Playground] to experiment with the parameters.
 
 
 
@@ -155,5 +154,5 @@ to contribute, feel free to [open an issue][issues].
 
 [GitHub identicons]: https://blog.github.com/2013-08-14-identicons/
 [Victor SVG Templates]: https://github.com/DannyBen/victor#svg-templates
-[Icodi Playground]: http://icodi.dannyb.co/sandbox
+[Icodi Playground]: https://icodi.dannyb.co/sandbox
 [issues]: https://github.com/DannyBen/icodi/issues
