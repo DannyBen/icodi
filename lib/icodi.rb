@@ -104,4 +104,8 @@ private
     [0, 0.5, -0.5][random(:jitter).rand(3)]
   end
 
+  def random_color
+    "#%06x" % (random(:color).rand * 0xffffff)
+  end
+
 end
