@@ -13,12 +13,6 @@ action :console, :c do
   run "bundle exec bin/console"
 end
 
-help   "Generate changelog"
-action :changelog do
-  run 'github_changelog_generator --cache-file tmp/changlog-cache'  
-  run "git commit -am 'update changelog' && git push"
-end
-
 usage  "make [TEXT]"
 action :make do |args|
   text = args['TEXT']
