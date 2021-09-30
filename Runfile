@@ -10,7 +10,7 @@ RunfileTasks::Testing.rspec
 
 help   "Run interactive console"
 action :console, :c do
-  run "bundle exec bin/console"
+  system "bundle exec bin/console"
 end
 
 usage  "make [TEXT]"
@@ -24,11 +24,11 @@ action :make do |args|
 end
 
 action :watch do
-  run! "filewatcher {Runfile,*.rb} 'run make'"
+  exec "filewatcher {Runfile,*.rb} 'run make'"
 end
 
 action :s, :server do
-  run! "rackup -p 3000 -o 0.0.0.0"
+  exec "rackup -p 3000 -o 0.0.0.0"
 end
 
 action :logo do
@@ -55,7 +55,7 @@ end
 
 help   "Generate TOC to toc.txt"
 action :toc do
-  run! 'gh-md-toc README.md > toc.txt'
+  exec 'gh-md-toc README.md > toc.txt'
 end
 
 action :strip do
