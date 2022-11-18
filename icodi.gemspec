@@ -1,10 +1,9 @@
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'icodi/version'
 
 Gem::Specification.new do |s|
   s.name        = 'icodi'
-  s.version     = Icodi::VERSION
+  s.version     = '0.1.3'
   s.summary     = 'Deterministic Random SVG Icon Generator'
   s.description = 'Generate repeatable random icons from any string'
   s.authors     = ['Danny Ben Shitrit']
