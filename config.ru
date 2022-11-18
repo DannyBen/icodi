@@ -14,7 +14,7 @@ require 'sinatra'
 require 'icodi'
 
 get '/*' do
-  seed = params[:splat].first  
+  seed = params[:splat].first
   seed = nil if seed.empty?
 
   options = {}

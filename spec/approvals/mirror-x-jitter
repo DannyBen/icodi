@@ -1,0 +1,12 @@
+<rect x="0" y="0" width="30" height="30" fill="#fff"/>
+<defs>
+<clipPath id="icodi-7180208">
+<rect width="30" height="30"/>
+</clipPath>
+</defs>
+<g clip-path="url(#icodi-7180208)">
+<rect x="10" y="5.0" width="10" height="10" fill="#a06d8f" style="stroke:#a06d8f; stroke-width:0.1"/>
+<rect x="-5.0" y="5.0" width="10" height="10" fill="#a06d8f" style="stroke:#a06d8f; stroke-width:0.1"/>
+<rect x="25.0" y="5.0" width="10" height="10" fill="#a06d8f" style="stroke:#a06d8f; stroke-width:0.1"/>
+<rect x="10" y="25.0" width="10" height="10" fill="#a06d8f" style="stroke:#a06d8f; stroke-width:0.1"/>
+</g>
