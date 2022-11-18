@@ -94,8 +94,8 @@ private
   def mid?(x: nil, y: nil)
     if x
       x == pixels / 2
-    else
-      y ? y == pixels / 2 : nil
+    elsif y
+      y == pixels / 2
     end
   end
 
