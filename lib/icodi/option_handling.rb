@@ -4,21 +4,21 @@ module IcodiCore
       respond_to?(method_name) ? options[method_name] : super
     end
 
-    def respond_to?(method_name, include_private = false)
+    def respond_to_missing?(method_name, _include_private = false)
       options.has_key?(method_name) ? true : super
     end
 
     def default_options
       {
-        template: :default, 
-        pixels: 5,
-        density: 0.5,
-        stroke: 0.1,
+        template:   :default,
+        pixels:     5,
+        density:    0.5,
+        stroke:     0.1,
         background: '#fff',
-        color: random_color,
-        mirror: :x,
-        jitter: 0,
-        id: :icodi,
+        color:      random_color,
+        mirror:     :x,
+        jitter:     0,
+        id:         :icodi,
       }
     end
 
@@ -33,16 +33,15 @@ module IcodiCore
     end
 
     def mirror_x?
-      [:x, :both].include? mirror
+      %i[x both].include? mirror
     end
 
     def mirror_y?
-      [:y, :both].include? mirror
+      %i[y both].include? mirror
     end
 
     def mirror_both?
       mirror == :both
     end
-
   end
 end

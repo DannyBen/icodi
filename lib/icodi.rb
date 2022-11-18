@@ -10,13 +10,16 @@ class Icodi < Victor::SVGBase
   attr_reader :text, :options
 
   def initialize(text = nil, opts = {})
-    text, opts = nil, text if text.is_a? Hash
-    
+    if text.is_a? Hash
+      opts = text
+      text = nil
+    end
+
     @text = text
     @options = default_options.merge opts
 
     super template: template, viewBox: "0 0 #{size} #{size}", id: id
-    
+
     generate
   end
 
@@ -39,7 +42,7 @@ private
     element :g, clip_path: "url(##{clip_path_id})" do
       draw x, y
     end
-  end  
+  end
 
   def draw(x_times, y_times)
     y_times.times do |y|
@@ -47,7 +50,7 @@ private
         add_pixels x, y if random.rand < density
       end
     end
-  end  
+  end
 
   def add_pixels(x, y)
     x, y = add_jitter x, y
@@ -59,27 +62,27 @@ private
   end
 
   def add_jitter(x, y)
-    if jitter > 0 and random(:jitter).rand < jitter
+    if jitter.positive? && (random(:jitter).rand < jitter)
       add_jitter! x, y
     else
-      [x, y] 
+      [x, y]
     end
   end
 
   def add_jitter!(x, y)
-    x += random_jitter unless mirror_x? and mid? x: x
-    y += random_jitter unless mirror_y? and mid? y: y
+    x += random_jitter unless mirror_x? && mid?(x: x)
+    y += random_jitter unless mirror_y? && mid?(y: y)
     [x, y]
   end
 
   def draw_pixel(x, y)
-    element :rect, x: x*10, y: y*10, width: 10, height: 10, fill: color, style: style
+    element :rect, x: x * 10, y: y * 10, width: 10, height: 10, fill: color, style: style
   end
 
   # Drawing Utilities
 
   def mirror?(x: nil, y: nil)
-    if x and y
+    if x && y
       mirror_both? and !mid?(x: x) and !mid?(y: y)
     elsif x
       mirror_x? and !mid? x: x
@@ -89,7 +92,11 @@ private
   end
 
   def mid?(x: nil, y: nil)
-    x ? x == pixels/2 : y ? y == pixels/2 : nil
+    if x
+      x == pixels / 2
+    else
+      y ? y == pixels / 2 : nil
+    end
   end
 
   def mirror_value(value)
@@ -97,7 +104,7 @@ private
   end
 
   def random_id
-    random(:nonvisual).rand(9999999)
+    random(:nonvisual).rand(9_999_999)
   end
 
   def random_jitter
@@ -105,7 +112,6 @@ private
   end
 
   def random_color
-    "#%06x" % (random(:color).rand * 0xffffff)
+    '#%06x' % (random(:color).rand * 0xffffff)
   end
-
 end
