@@ -1,7 +1,11 @@
-require: rubocop-rspec
+require:
+  - rubocop-performance
+  - rubocop-rspec
 
 inherit_gem:
-  rentacop: rentacop.yml
+  rentacop:
+    - rentacop.yml
+    - rspec.yml
 
 AllCops:
-  TargetRubyVersion: 2.7.0
+  TargetRubyVersion: 2.7
