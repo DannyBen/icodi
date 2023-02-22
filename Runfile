@@ -1,17 +1,11 @@
-require "runfile-tasks"
 require "byebug"
-require_relative 'lib/icodi'
+require 'icodi'
 
 title   "Icodi Developer Toolbelt"
 summary "Runfile tasks for building the Icodi gem"
 
-RunfileTasks::RubyGems.all 'icodi'
-RunfileTasks::Testing.rspec
-
-help   "Run interactive console"
-action :console, :c do
-  system "bundle exec bin/console"
-end
+import_gem 'runfile-tasks/gem'
+import 'debug'
 
 usage  "make [TEXT]"
 action :make do |args|
@@ -51,11 +45,6 @@ action :logo do
   end
 
   svg.save 'logo'
-end
-
-help   "Generate TOC to toc.txt"
-action :toc do
-  exec 'gh-md-toc README.md > toc.txt'
 end
 
 action :strip do
@@ -98,16 +87,16 @@ action :strip do
   end
 end
 
-def make_strip(name, count, pixels)
-  svg = Victor::SVG.new viewBox: "0 0 #{count*(pixels+1)*10-10} #{pixels*10}"
+helpers do
+  def make_strip(name, count, pixels)
+    svg = Victor::SVG.new viewBox: "0 0 #{count*(pixels+1)*10-10} #{pixels*10}"
 
-  svg.build do
-    count.times do |i|
-      g(transform: "translate(#{i*(pixels+1)*10} 0)")  { append yield i }
+    svg.build do
+      count.times do |i|
+        g(transform: "translate(#{i*(pixels+1)*10} 0)")  { append yield i }
+      end
     end
+
+    svg.save "assets/strip_#{name}"
   end
-
-  svg.save "assets/strip_#{name}"
 end
-
-require_relative 'debug' if File.exist? 'debug.rb'
