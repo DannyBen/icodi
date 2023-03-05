@@ -1,10 +1,10 @@
 require 'victor'
 require 'digest/md5'
-require 'icodi/option_handling'
+require 'icodi/options'
 require 'icodi/randomization'
 
 class Icodi < Victor::SVGBase
-  include IcodiCore::OptionHandling
+  include IcodiCore::Options
   include IcodiCore::Randomization
 
   attr_reader :text, :options
@@ -15,10 +15,12 @@ class Icodi < Victor::SVGBase
       text = nil
     end
 
+    svg_template = opts.delete :template
+
     @text = text
     @options = default_options.merge opts
 
-    super template: options[:template], viewBox: "0 0 #{size} #{size}", id: id
+    super template: svg_template, viewBox: "0 0 #{size} #{size}", id: id
 
     generate
   end
