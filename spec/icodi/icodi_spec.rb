@@ -6,7 +6,7 @@ describe Icodi do
   let(:text) { 'some text' }
   let(:options) { {} }
 
-  describe '#so_s' do
+  describe '#to_s' do
     subject(:output) { icodi.to_s }
 
     context 'with a text input' do
@@ -65,18 +65,17 @@ describe Icodi do
     end
   end
 
-  describe 'options' do
-    describe 'template' do
-      it 'defaults to default' do
-        expect(subject.template).to eq :default
-      end
+  # regression test for issue #14
+  describe 'template' do
+    it 'defaults to :default' do
+      expect(subject.template).to eq :default
+    end
 
-      context 'when set to html' do
-        let(:options) { { template: :html } }
+    context 'when initialized with :html' do
+      let(:options) { { template: :html } }
 
-        it 'uses html as template' do
-          expect(subject.template).to eq :html
-        end
+      it 'returns :html' do
+        expect(subject.template).to eq :html
       end
     end
   end
