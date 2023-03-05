@@ -64,4 +64,20 @@ describe Icodi do
       end
     end
   end
+
+  describe 'options' do
+    describe 'template' do
+      it 'defaults to default' do
+        expect(subject.template).to eq :default
+      end
+
+      context 'when set to html' do
+        let(:options) { { template: :html } }
+
+        it 'uses html as template' do
+          expect(subject.template).to eq :html
+        end
+      end
+    end
+  end
 end
