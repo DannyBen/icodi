@@ -18,7 +18,7 @@ class Icodi < Victor::SVGBase
     @text = text
     @options = default_options.merge opts
 
-    super template: @options[:template], viewBox: "0 0 #{size} #{size}", id: id
+    super template: options[:template], viewBox: "0 0 #{size} #{size}", id: id
 
     generate
   end
