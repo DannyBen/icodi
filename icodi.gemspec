@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |s|
   s.name        = 'icodi'
-  s.version     = '0.1.3'
+  s.version     = '0.1.4'
   s.summary     = 'Deterministic Random SVG Icon Generator'
   s.description = 'Generate repeatable random icons from any string'
   s.authors     = ['Danny Ben Shitrit']
