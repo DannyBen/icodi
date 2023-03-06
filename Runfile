@@ -1,17 +1,17 @@
-require "byebug"
+require 'byebug'
 require 'icodi'
 
-title   "Icodi Developer Toolbelt"
-summary "Runfile tasks for building the Icodi gem"
+title   'Icodi Developer Toolbelt'
+summary 'Runfile tasks for building the Icodi gem'
 
 import_gem 'runfile-tasks/gem'
 import 'debug'
 
-usage  "make [TEXT]"
+usage  'make [TEXT]'
 action :make do |args|
   text = args['TEXT']
 
-  options = { } # pixels: 6, mirror: :y }
+  options = {} # pixels: 6, mirror: :y }
 
   icodi = Icodi.new text, options
   icodi.save 'dev/icodi'
@@ -22,25 +22,32 @@ action :watch do
 end
 
 action :s, :server do
-  exec "rackup -p 3000 -o 0.0.0.0"
+  exec 'rackup -p 3000 -o 0.0.0.0'
 end
 
 action :logo do
-  svg = Victor::SVG.new viewBox: "0 0 130 30"
+  svg = Victor::SVG.new viewBox: '0 0 130 30'
 
-  pixels = %w[- 0,0 0,1 0,2 - 2,0 2,1 2,2 3,0 3,2 - 5,0 5,1 5,2 6,0 6,2 7,0 7,1 7,2 - 9,0 9,2 10,0 10,1 10,2 - 12,0 12,1 12,2]
-  color, style = nil, nil
+  pixels = %w[
+    - 0,0 0,1 0,2
+    - 2,0 2,1 2,2 3,0 3,2
+    - 5,0 5,1 5,2 6,0 6,2 7,0 7,1 7,2
+    - 9,0 9,2 10,0 10,1 10,2
+    - 12,0 12,1 12,2
+  ]
+  color = nil
+  style = nil
 
   svg.build do
     pixels.each do |pixel|
       if pixel == '-'
-        color = "#%06x" % (rand * 0xffffff) 
+        color = '#%06x' % (rand * 0xffffff)
         style = { stroke: color, stroke_width: 0.1 }
         next
       end
       x, y = pixel.split(',').map(&:to_i)
 
-      svg.rect x: x*10, y: y*10, width: 10, height: 10, fill: color, style: style
+      svg.rect x: x * 10, y: y * 10, width: 10, height: 10, fill: color, style: style
     end
   end
 
@@ -48,55 +55,55 @@ action :logo do
 end
 
 action :strip do
-  p seed = rand(1..10000000)
-
-  make_strip :default, 6, 5 do |i|
+  make_strip :default, count: 6, pixels: 5 do |i|
     Icodi.new "2897582#{i}"
   end
 
-  make_strip :mirror_y, 6, 6 do |i|
+  make_strip :mirror_y, count: 6, pixels: 6 do |i|
     Icodi.new "7663746#{i}", pixels: 6, mirror: :y, stroke: 4
   end
 
-  make_strip :thick_stroke, 5, 8 do |i|
+  make_strip :thick_stroke, count: 5, pixels: 8 do |i|
     Icodi.new "6350260#{i}", pixels: 8, stroke: 7, density: 0.3
   end
 
-  make_strip :mirror_both, 5, 7 do |i|
+  make_strip :mirror_both, count: 5, pixels: 7 do |i|
     Icodi.new "5226548#{i}", pixels: 7, mirror: :both, stroke: 3, density: 0.6
   end
 
-  make_strip :strokes, 5, 5 do |i|
-    Icodi.new "6885186", pixels: 5, stroke: 0.1 + i
+  make_strip :strokes, count: 5, pixels: 5 do |i|
+    Icodi.new '6885186', pixels: 5, stroke: 0.1 + i
   end
 
-  make_strip :densities, 5, 5 do |i|
-    Icodi.new "4334980", pixels: 5, density: 0.3 + i*0.1
+  make_strip :densities, count: 5, pixels: 5 do |i|
+    Icodi.new '4334980', pixels: 5, density: 0.3 + (i * 0.1)
   end
 
-  make_strip :mirrors, 4, 6 do |i|
-    Icodi.new "1324318", pixels: 6, mirror: [:x, :y, :both, :none][i], density: 0.3, stroke: 5
+  make_strip :mirrors, count: 4, pixels: 6 do |i|
+    Icodi.new '1324318', pixels: 6, mirror: %i[x y both none][i], density: 0.3, stroke: 5
   end
 
-  make_strip :jitter, 5, 5 do |i|
+  make_strip :jitter, count: 5, pixels: 5 do |i|
     Icodi.new "5187111#{i}", pixels: 5, jitter: 0.9, stroke: 2
   end
 
-  make_strip :jitters, 5, 7 do |i|
-    Icodi.new "6021147", pixels: 7, jitter: i*0.2, stroke: 2
+  make_strip :jitters, count: 5, pixels: 7 do |i|
+    Icodi.new '6021147', pixels: 7, jitter: i * 0.2, stroke: 2
   end
 end
 
 helpers do
-  def make_strip(name, count, pixels)
-    svg = Victor::SVG.new viewBox: "0 0 #{count*(pixels+1)*10-10} #{pixels*10}"
+  def make_strip(name, count:, pixels:)
+    svg = Victor::SVG.new viewBox: "0 0 #{(count * (pixels + 1) * 10) - 10} #{pixels * 10}"
 
     svg.build do
       count.times do |i|
-        g(transform: "translate(#{i*(pixels+1)*10} 0)")  { append yield i }
+        g(transform: "translate(#{i * (pixels + 1) * 10} 0)") { append yield i }
       end
     end
 
-    svg.save "assets/strip_#{name}"
+    file = "assets/strip_#{name}"
+    say "saving g`#{file}`"
+    svg.save file
   end
 end
