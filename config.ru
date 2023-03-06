@@ -26,7 +26,7 @@ get '/*' do
   options[:background] = "##{params[:background]}" if params[:background]
   options[:color]      = "##{params[:color]}" if params[:color]
 
-  content_type 'image/svg+xml'
+  content_type :svg
   Icodi.new(seed, options).render
 end
 
