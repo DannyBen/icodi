@@ -11,13 +11,14 @@ Gem::Specification.new do |s|
   s.files       = Dir['README.md', 'lib/**/*.*']
   s.homepage    = 'https://github.com/dannyben/icodi'
   s.license     = 'MIT'
-  s.required_ruby_version = '>= 3.0'
+  s.required_ruby_version = '>= 3.1'
 
-  s.add_runtime_dependency 'victor', '~> 0.2'
+  s.add_dependency 'victor', '~> 0.2'
 
   s.metadata = {
     'bug_tracker_uri'       => 'https://github.com/DannyBen/icodi/issues',
     'source_code_uri'       => 'https://github.com/DannyBen/icodi',
+    'changelog_uri'         => 'https://github.com/DannyBen/icodi/blob/master/CHANGELOG.md',
     'rubygems_mfa_required' => 'true',
   }
 end
