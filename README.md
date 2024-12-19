@@ -14,18 +14,6 @@ Generate repeatable random SVG icons from any string, similar to
 
 ---
 
-Table of Contents
---------------------------------------------------
-
-- [Installation](#installation)
-- [Demo](#demo)
-- [Examples](#examples)
-- [Usage](#usage)
-- [Options](#options)
-- [Using with Sinatra](#using-with-sinatra)
-- [Contributing / Support](#contributing--support)
-
-
 Installation
 --------------------------------------------------
 
@@ -132,7 +120,7 @@ Parameter   | Default    | Type    | Description
 `jitter`    | `0`        | Float   | A value between 0 and 1 representing the chance for a pixel to be dislocated by half of its size in a random direction.
 `background`| `#fff`     | String  | A named SVG color string (`blue`, `yellow` etc.) or RGB color (for example `#dddddd`).
 `id`        | `icodi`    | String  | The ID to assign the SVG object. Normally this should not matter, but if you intend to embed this icon in an HTML, or in another SVG, this can be useful.
-`template`  | `:default` | Symbol/String | SVG template to use. Can be `:default`, `:html` or a path to a file. Read more on [Victor SVG Templates].
+`template`  | `:default` | Symbol/String | SVG template to use. Can be `:default`, `:minimal` or a path to a file. Read more on [Victor SVG Templates].
 
 ---
 
@@ -153,6 +141,6 @@ to contribute, feel free to [open an issue][issues].
 ---
 
 [GitHub identicons]: https://blog.github.com/2013-08-14-identicons/
-[Victor SVG Templates]: https://github.com/DannyBen/victor#svg-templates
+[Victor SVG Templates]: https://victor.dannyb.co/extras/templates/
 [Icodi Playground]: https://icodi.dannyb.co/sandbox
 [issues]: https://github.com/DannyBen/icodi/issues
