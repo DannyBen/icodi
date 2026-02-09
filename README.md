@@ -3,6 +3,8 @@
 Icodi - Deterministic Random SVG Icon Generator
 ==================================================
 
+![repocard](https://repocard.dannyben.com/svg/icodi.svg)
+
 Generate repeatable random SVG icons from any string, similar to 
 [GitHub identicons].
 
